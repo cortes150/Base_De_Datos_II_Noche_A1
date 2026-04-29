@@ -1,0 +1,22 @@
+ -- Realizar ejercicios de and, or, in, BETWEEN,  AND + OR, NOT y NOT IN 
+ -- Entradas vendidas con precio mayor a 100
+ -- Eventos en junio en "Campus"
+ -- Pagos con tarjeta y monto mayor a 100
+ -- Entradas vendidas o canceladas
+ -- Eventos en "Auditorio" o "Campus"
+ -- Pagos en efectivo o tarjeta
+ -- Eventos en ciertos lugares
+ -- Pagos con métodos específicos
+ -- Usuarios con IDs específicos
+ -- Entradas con precio entre 100 y 200
+ -- Eventos entre dos fechas
+ -- Pagos entre 100 y 200
+ -- Entradas vendidas y precio > 100 o canceladas
+ --  Eventos en Auditorio o Campus en ciertas fechas
+ -- Pagos tarjeta > 100 o efectivo < 100
+ -- Entradas que NO están vendidas
+ -- Eventos que NO son en Campus
+ -- Pagos que NO son online
+ -- Usuarios que NO están en la lista
+ -- Eventos que NO están en ciertos lugares
+ -- Pagos que NO son tarjeta ni efectivo
