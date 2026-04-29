@@ -2,3 +2,5 @@
 select * from evento where lugar = "Auditorio";
 -- mostrar entradas vendidas
 select * from entrada where estado = "vendida" ;
+-- mostrar el precio de la entrada mayores a 180
+select * from entrada where precio > 180;
