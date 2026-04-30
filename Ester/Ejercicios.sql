@@ -42,3 +42,17 @@ use unifest_db;
  select * from evento where lugar not in ('coliseo', 'campus');
  -- Pagos que NO son tarjeta ni efectivo  
  select * from pago where metodo not in ('tarjeta','efectivo');
+ 
+-- ORDER BY
+-- mostrar todos los usuarios ordenados de la A a la Z
+select * from usuario order by nombre asc;
+-- mostrar eventos ordenados por mas reciente;
+select * from evento order by fecha desc;
+-- mostrar entradas vendidas ordenadas por precio
+select * from entrada where estado="vendida" order by precio desc;
+-- ordenar entradas primero por estado y luego por precio
+select * from entrada order by estado asc, precio desc;
+-- ordenar pago por metodo y luego por monto 
+select * from pago order by metodo asc, monto desc;
+-- mostrar eventos que contienen 'e' ordenados por fecha descendiente
+select * from evento where nombre like '%e%' order by fecha desc
