@@ -38,7 +38,7 @@ where metodo in ("online","tarjeta");
  -- 13 Entradas vendidas y precio > 100 o canceladas
   select * from entrada where precio > 100  and estado =  "vendida"  or estado =  "cancelada";
  -- 14  Eventos en Auditorio o Campus en ciertas fechas
-  select * from pago where monto > 100  and metodo =  "tarjeta"  or  monto < 100  and metodo =  "efectivo" ;
+  select * from evento where lugar =  "Campus"  or  lugar =  "Auditorio"   and fecha >= 2025-06-01 and fecha >= 2025-06-10 ;
  -- 15 Pagos tarjeta > 100 o efectivo < 100
   select * from pago where monto > 100  and metodo =  "tarjeta"  or  monto < 100  and metodo =  "efectivo" ;
  -- 16 Entradas que NO están vendidas
