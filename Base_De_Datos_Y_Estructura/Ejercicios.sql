@@ -20,3 +20,4 @@
  -- Usuarios que NO están en la lista
  -- Eventos que NO están en ciertos lugares
  -- Pagos que NO son tarjeta ni efectivo
+
