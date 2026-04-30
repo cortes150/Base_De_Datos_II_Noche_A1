@@ -59,5 +59,18 @@ where nombre not in ("Juan Perez", "Ana Torres");
 where lugar not in ("Auditorio", "Coliseo");
 
  -- 21 Pagos que NO son tarjeta ni efectivo
- SELECT * FROM pago 
-WHERE metodo NOT IN ("tarjeta", "efectivo");
+ select * from pago 
+where metodo not in ("tarjeta", "efectivo");
+
+select * from entrada
+where estado ="vendida"
+and precio between 100 and 200;
+-- select columna from order by tabla asc/desc
+select * from usuario order by nombre asc;
+select * from evento order by fecha asc;
+select * from evento order by fecha desc;
+select * from entrada where estado ="vendida" order by precio desc;
+select * from entrada where estado ="vendida" order by precio desc;
+select * from entrada order by estado asc ,precio desc;
+select * from pago order by metodo asc ,monto desc;
+select * from evento where nombre like "%e%" order by fecha desc ;
