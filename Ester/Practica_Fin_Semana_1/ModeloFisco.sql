@@ -16,9 +16,7 @@ CREATE TABLE producto (
     precio_unitario DECIMAL(10,2) NOT NULL,
     estado ENUM('activo', 'inactivo') NOT NULL DEFAULT 'activo',
 
-    CONSTRAINT fk_producto_categoria
-        FOREIGN KEY (id_categoria)
-        REFERENCES categoria(id_categoria)
+    FOREIGN KEY (id_categoria) REFERENCES categoria(id_categoria)
 );
 
 CREATE TABLE planta (
@@ -36,13 +34,8 @@ CREATE TABLE inventario (
     stock_minimo INT NOT NULL DEFAULT 0,
     fecha_actualizacion DATE NOT NULL,
 
-    CONSTRAINT fk_inventario_planta
-        FOREIGN KEY (id_planta)
-        REFERENCES planta(id_planta),
-
-    CONSTRAINT fk_inventario_producto
-        FOREIGN KEY (id_producto)
-        REFERENCES producto(id_producto)
+    FOREIGN KEY (id_planta) REFERENCES planta(id_planta),
+    FOREIGN KEY (id_producto) REFERENCES producto(id_producto)
 );
 
 CREATE TABLE cliente (
@@ -71,9 +64,7 @@ CREATE TABLE ruta (
     distancia_km DECIMAL(8,2),
     estado ENUM('activa', 'inactiva') NOT NULL DEFAULT 'activa',
 
-    CONSTRAINT fk_ruta_distribuidor
-        FOREIGN KEY (id_distribuidor)
-        REFERENCES distribuidor(id_distribuidor)
+    FOREIGN KEY (id_distribuidor) REFERENCES distribuidor(id_distribuidor)
 );
 
 CREATE TABLE pedido (
@@ -83,13 +74,8 @@ CREATE TABLE pedido (
     fecha_pedido DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     estado_pedido ENUM('registrado', 'asignado', 'cancelado') NOT NULL DEFAULT 'registrado',
 
-    CONSTRAINT fk_pedido_cliente
-        FOREIGN KEY (id_cliente)
-        REFERENCES cliente(id_cliente),
-
-    CONSTRAINT fk_pedido_ruta
-        FOREIGN KEY (id_ruta)
-        REFERENCES ruta(id_ruta)
+    FOREIGN KEY (id_cliente) REFERENCES cliente(id_cliente),
+    FOREIGN KEY (id_ruta) REFERENCES ruta(id_ruta)
 );
 
 CREATE TABLE detalle_pedido (
@@ -99,13 +85,8 @@ CREATE TABLE detalle_pedido (
     cantidad INT NOT NULL,
     precio_unitario DECIMAL(10,2) NOT NULL,
 
-    CONSTRAINT fk_detalle_pedido
-        FOREIGN KEY (id_pedido)
-        REFERENCES pedido(id_pedido),
-
-    CONSTRAINT fk_detalle_producto
-        FOREIGN KEY (id_producto)
-        REFERENCES producto(id_producto)
+    FOREIGN KEY (id_pedido) REFERENCES pedido(id_pedido),
+    FOREIGN KEY (id_producto) REFERENCES producto(id_producto)
 );
 
 CREATE TABLE entrega (
@@ -116,7 +97,5 @@ CREATE TABLE entrega (
     estado_entrega ENUM('pendiente', 'en_ruta', 'entregado') NOT NULL DEFAULT 'pendiente',
     observacion TEXT,
 
-    CONSTRAINT fk_entrega_pedido
-        FOREIGN KEY (id_pedido)
-        REFERENCES pedido(id_pedido)
+    FOREIGN KEY (id_pedido) REFERENCES pedido(id_pedido)
 );
