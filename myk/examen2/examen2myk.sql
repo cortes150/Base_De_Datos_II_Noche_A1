@@ -1,4 +1,4 @@
--- 1. .Mostrar los proyectos ganadores con innovacion mayor a 90, junto al nombre del docente responsable, ordenados del mas innovador al menos innovador
+-- 1. Mostrar los proyectos ganadores con innovacion mayor a 90, junto al nombre del docente responsable, ordenados del mas innovador al menos innovador
 SELECT 
     p.titulo,
     p.nivel_innovacion,
